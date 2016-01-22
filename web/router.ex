@@ -17,8 +17,9 @@ defmodule ExfileSample.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    foward "attachments", Exfile.Router
+    resources "/users", UserController
   end
+  forward "/attachments", Exfile.Router
 
   # Other scopes may use custom stacks.
   # scope "/api", ExfileSample do
